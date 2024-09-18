@@ -1,0 +1,300 @@
+/* Reset básico */
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html
+{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.navbar-toggler {
+  z-index: 1001; 
+}
+body
+{
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.animation-wrapper
+{
+  width: 250px;
+  height: 80px;
+  background-color: #21a1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 80px; 
+  padding: 50px 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.animation-wrapper:hover
+{
+  background-color: #1e90ff;
+}
+
+.start-screen
+{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: #282c34;
+  flex-direction: column;
+}
+
+.start-button-text
+{
+  margin-top: 20px;
+  padding: 20px 40px;
+  font-size: 24px;
+  color: white;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover
+{
+  background-color: #21a1f1;
+}
+
+
+.language-select
+{
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  display: flex;
+  align-items: center;
+}
+
+
+.flag-icon
+{
+  cursor: pointer;
+  width: 24px;
+  margin-left: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.flag-icon:hover
+{
+  transform: scale(1.1);
+}
+
+.welcome
+{
+  margin: 0 auto;
+  max-width: 1300px;
+  text-align: center;
+  font-size: 80px;
+  color: #333;
+  padding: 20px 0;
+}
+
+@media (max-width: 768px)
+{
+  .floating-animations {
+    display: none;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .welcome {
+    font-size: 50px;
+  }
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .lottie-animation {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px)
+{
+  .language-select
+  {
+    top: 15px;
+    right: 100px;
+  }
+  .flag-icon
+  {
+    width: 20px;
+    margin-left: 5px;
+  }
+  .navbar-toggler
+  {
+    z-index: 1050;
+    position: relative;
+  }
+  .navbar-collapse.show .language-select {
+    position: fixed;
+    top: 100px; 
+    right: 20px;
+  }
+
+}
+
+@media (max-width: 576px)
+{
+  .language-select
+  {
+    right: 120px;
+  }
+
+  .flag-icon
+  {
+    right: 50px;
+  }
+  
+}
+
+.navbar-toggler {
+  z-index: 1000;
+}
+
+.skills-text
+{
+  position: absolute;
+  width: 80vw;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.container .skill-box, .container .card
+{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container .skill-box:hover, .container .card:hover
+{
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-box {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.description
+{
+  font-size: 1.5rem !important;
+  margin: 0 auto;
+  max-width: 1000px;
+  line-height: 1.6;
+  text-align: center;
+  word-break: break-word;
+  padding: 0 20px;
+}
+
+.floating-animations
+{
+  top: 80px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; 
+  z-index: -1;
+}
+
+.floating-column
+{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.floating-column.left
+{
+  left: 40px;
+}
+
+.floating-column.right
+{
+  right: 100px;
+}
+
+.floating-lottie
+{
+  position: absolute;
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float
+{
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+footer
+{
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+}
+
+footer a
+{
+  color: #61dafb;
+  margin: 0 5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover
+{
+  color: #21a1f1;
+}
+
