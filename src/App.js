@@ -1,7 +1,6 @@
 import './App.css';
 import Approutes from './routes/page.routes';
 import { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import LanguageSelector from './components/languageSelector';
 import { useTranslation } from 'react-i18next';
 import Lottie from 'react-lottie';
@@ -15,8 +14,7 @@ function App() {
     loop: true,
     autoplay: true,
     animationData: animationData,
-    rendererSettings:
-    {
+    rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
@@ -26,23 +24,20 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <div className="main">
-        {!started ? (
-          <div className="start-screen">
-            <LanguageSelector />
-            <div className="animation-wrapper" onClick={handlerStart}>
-              <Lottie options={defaultOptions} height={60} width={230}
-              />
-            </div>
-            <br />
-            <span className="start-button-text">{t('Start')}</span>
+    <div className="main">
+      {!started ? (
+        <div className="start-screen">
+          <LanguageSelector />
+          <div className="animation-wrapper" onClick={handlerStart}>
+            <Lottie options={defaultOptions} height={60} width={230} />
           </div>
-        ) : (
-          <Approutes />
-        )}
-      </div>
-    </BrowserRouter>
+          <br />
+          <span className="start-button-text">{t('Start')}</span>
+        </div>
+      ) : (
+        <Approutes />
+      )}
+    </div>
   );
 }
 
