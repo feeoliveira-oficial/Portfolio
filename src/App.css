@@ -42,6 +42,23 @@ body
 }
 
 
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.social-icon {
+  color: #333; 
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); 
+  color: #007bff;
+}
+
+
 .animation-wrapper:hover
 {
   background-color: #1e90ff;

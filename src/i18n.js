@@ -8,7 +8,7 @@ const resources =
             translation:
             {
                 Start: 'Press Start',
-                welcome: 'Welcome to my portfolio',
+                welcome: 'Hey you, be very Welcome',
                 Home: 'Home',
                 description: "Hello! I'm Felipe, a newbie developer with a Senior passion for technology. This portfolio is a window into my work, projects, and learning journey in programming.I hope you enjoy the xp and by the chance, if you have an open position in your team, don't hesitate give me a call, text me, send smokes signs, morse code, etc.",
                 Skills: 'Skills',
@@ -34,7 +34,7 @@ const resources =
             translation:
             {
                 Start: 'Pressione Iniciar',
-                welcome: 'Bem-vindo ao meu portfólio',
+                welcome: 'Olá, seja muito bem-vindo',
                 Home: 'Início',
                 description: "Olá! Eu sou o Felipe, um desenvolvedor juninho com uma paixão sênior por tecnologia. Este portfólio é uma janela para o meu trabalho, projetos e jornada de aprendizado em programação. Aproveite a experiência e, por acaso, houver uma posição na sua equipe, não hesite em me ligar, enviar uma mensagem de texto, enviar sinais de fumaça, código morse, etc.",
                 Skills: 'Habilidades',
@@ -60,7 +60,7 @@ const resources =
             translation:
             {
                 Start: 'Appuyez sur Démarrer',
-                welcome: 'Bienvenue dans mon portfolio',
+                welcome: 'Salut, soyez le bienvenu',
                 Home: 'Accueil',
                 description: "Bonjour! Je m'appelle Felipe, un nouveau développeur avec une passion senior pour la technologie. Ce portfolio est une fenêtre sur mon travail, mes projets et mon parcours d'apprentissage en programmation. J'espère que vous apprécierez et, par hasard, si vous avez une position pour moi dans votre équipe, n'hésitez pas à m'appeler, m'envoyer un SMS, envoyer des signaux de fumée, code morse, etc.",
                 Skills: 'Compétences',
@@ -86,7 +86,7 @@ const resources =
             translation:
             {
                 Start: 'Presiona Iniciar',
-                welcome: 'Bienvenido a mi portafolio',
+                welcome: 'Hola, sé muy bienvenido',
                 Home: 'Inicio',
                 description: "¡Hola! Soy Felipe, un desarrollador novato con una pasión senior por la tecnología. Este portafolio es una ventana a mi trabajo, proyectos y viaje de aprendizaje en programación. Espero que disfrutes y, por casualidad, si tienes un puesto para mí en tu equipo, no dudes en llamarme, enviarme un mensaje de texto, enviar señales de humo, código morse, etc.",
                 Skills: 'Habilidades',
