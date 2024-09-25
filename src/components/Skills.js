@@ -35,25 +35,25 @@ function Skills() {
 
       <div className="floating-animations">
         <div className="floating-column left">
-          <div className="floating-lottie" style={{ top: '0%' }}>
+          <div className="floating-lottie" style={{ top: '-10%' }}>
           <Lottie options={defaultOptions(htmlAnimation)} height={90} width={90} />
           </div>
-          <div className="floating-lottie" style={{ top: '30%' }}>
+          <div className="floating-lottie" style={{ top: '20%' }}>
           <Lottie options={defaultOptions(jsAnimation)} height={60} width={60} />
           </div>
-          <div className="floating-lottie" style={{ top: '60%' }}>
+          <div className="floating-lottie" style={{ top: '48%' }}>
           <Lottie options={defaultOptions(mysqlAnimation)} height={100} width={100} />
           </div>
         </div>
 
         <div className="floating-column right">
-          <div className="floating-lottie" style={{ top: '0%' }}>
+          <div className="floating-lottie" style={{ top: '-10%' }}>
           <Lottie options={defaultOptions(cssAnimation)} height={90} width={90} />
           </div>
-          <div className="floating-lottie" style={{ top: '30%' }}>
+          <div className="floating-lottie" style={{ top: '20%' }}>
           <Lottie options={defaultOptions(reactAnimation)} height={100} width={100} />
           </div>
-          <div className="floating-lottie" style={{ top: '60%' }}>
+          <div className="floating-lottie" style={{ top: '47%' }}>
           <Lottie options={defaultOptions(cAnimation)} height={90} width={90} />
           </div>
         </div>

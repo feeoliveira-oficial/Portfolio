@@ -15,9 +15,11 @@ body, html
   overflow-y: auto;
 }
 
-.navbar-toggler {
+.navbar-toggler
+{
   z-index: 1001; 
 }
+
 body
 {
   font-family: 'Arial', sans-serif;
@@ -25,6 +27,16 @@ body
   flex-direction: column;
   min-height: 100vh;
   overflow-y: auto;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.start-screen, .app-routes {
+  flex: 1; /* makes the content fill the remaining space */
 }
 
 .animation-wrapper
@@ -66,12 +78,13 @@ body
 
 .start-screen
 {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items:center;
   background-color: #282c34;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .start-button-text
@@ -165,7 +178,7 @@ body
     position: relative;
   }
   .navbar-collapse.show .language-select {
-    position: fixed;
+    position: absolute;
     top: 100px; 
     right: 20px;
   }
@@ -186,15 +199,12 @@ body
   
 }
 
-.navbar-toggler {
-  z-index: 1000;
-}
-
 .skills-text
 {
-  position: absolute;
+  /* position: absolute; */
+  position: relative;
   width: 80vw;
-  height: 100vh;
+  /* height: 100vh; */
   left: 0;
   right: 0;
   margin: auto;
@@ -239,14 +249,16 @@ body
 
 .floating-animations
 {
-  top: 80px;
+  /* top: 80px; */
   margin: auto;
   left: 0;
   right: 0;
   align-items: center;
   position: absolute;
+  /* position: relative; */
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  /* height: 100vh; */
   pointer-events: none; 
   z-index: -1;
 }
@@ -289,7 +301,7 @@ body
   }
 }
 
-footer
+/* footer
 {
   background-color: #f8f9fa;
   padding: 20px 0;
@@ -300,6 +312,17 @@ footer
   bottom: 0;
   left: 0;
   position: fixed;
+} */
+
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+  position: relative;
+  margin-top: auto;
 }
 
 footer a
