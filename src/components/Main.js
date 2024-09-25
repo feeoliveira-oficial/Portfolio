@@ -26,7 +26,7 @@ function Main() {
       transition={{ duration: 0.5 }}
     >
       <div className="lottie-animation">
-        <Lottie options={defaultOptions} height={150} width={150} />
+        <Lottie options={defaultOptions} height={100} width={130} />
       </div>
       <h1 className="welcome">{t('welcome')}</h1>
       <br />

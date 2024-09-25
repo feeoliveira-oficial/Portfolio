@@ -18,6 +18,7 @@ function Projects() {
       <h2 className="text-center">{t('ProjectsTitle')}</h2>
       <br />
       <div className="row">
+        {/* Primeiro projeto */}
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
@@ -29,9 +30,8 @@ function Projects() {
             </div>
           </div>
         </div>
-      </div>
-      <br />
-      <div className="row">
+
+        {/* Segundo projeto */}
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
@@ -43,9 +43,8 @@ function Projects() {
             </div>
           </div>
         </div>
-      </div>
-      <br />
-      <div className="row">
+
+        {/* Terceiro projeto */}
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
@@ -57,11 +56,11 @@ function Projects() {
             </div>
           </div>
         </div>
+
+        {/* Adicione novos projetos aqui da mesma forma */}
       </div>
     </motion.section>
   );
 }
 
 export default Projects;
-
-
