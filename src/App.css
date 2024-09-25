@@ -78,7 +78,6 @@ body
 
 .start-screen
 {
-  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items:center;
@@ -136,6 +135,16 @@ body
   font-size: 80px;
   color: #333;
   padding: 20px 0;
+}
+
+@media (min-width: 1200px) {
+  .floating-column.right {
+    right: 20px; 
+  }
+
+  .floating-column.left {
+    left: 20px; 
+  }
 }
 
 @media (max-width: 768px)
@@ -201,12 +210,9 @@ body
 
 .skills-text
 {
-  /* position: absolute; */
   position: relative;
   width: 80vw;
-  /* height: 100vh; */
-  left: 0;
-  right: 0;
+  max-width: 1200px;
   margin: auto;
   text-align: center;
 }
@@ -249,16 +255,13 @@ body
 
 .floating-animations
 {
-  /* top: 80px; */
   margin: auto;
   left: 0;
   right: 0;
   align-items: center;
   position: absolute;
-  /* position: relative; */
-  width: 100vw;
+  width: 100%;
   height: auto;
-  /* height: 100vh; */
   pointer-events: none; 
   z-index: -1;
 }
@@ -301,18 +304,6 @@ body
   }
 }
 
-/* footer
-{
-  background-color: #f8f9fa;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 14px;
-  color: #333;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-} */
 
 footer {
   background-color: #f8f9fa;
