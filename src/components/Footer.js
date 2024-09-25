@@ -10,6 +10,10 @@ function Footer() {
         <a href="https://github.com/feeoliveira-oficial" target="_blank" rel="noopener noreferrer">GitHub</a> | 
         <a href="https://www.linkedin.com/in/felipe-oliveira-dos-santos-2612f88/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
+      <div className="mt-2">
+        <a href="https://www.privacypolicies.com" target="_blank" rel="noopener noreferrer">{t('PrivacyPolicy')}</a> | 
+        <a href="https://www.termsofusegenerator.net" target="_blank" rel="noopener noreferrer">{t('TermsOfUse')}</a>
+      </div>
     </footer>
   );
 }

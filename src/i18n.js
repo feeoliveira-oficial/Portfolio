@@ -34,7 +34,8 @@ const resources =
                 project4:'',
                 cardtitle5:'',
                 project5:'',
-                copyright: '© 2024 [Felipe] - Copyright',
+                PrivacyPolicy: 'Privacy Policy',
+                TermsOfUse: 'Terms of Use',
             }
         },
     pt:
@@ -68,7 +69,8 @@ const resources =
                 project4:'',
                 cardtitle5:'',
                 project5:'',
-                copyright: '© 2024 [Felipe] - Direitos reservados',
+                PrivacyPolicy: 'Política de Privacidade',
+                TermsOfUse: 'Termos de Uso',
             }
         },
     fr:
@@ -102,7 +104,8 @@ const resources =
                 project4:'',
                 cardtitle5:'',
                 project5:'',
-                copyright: '© 2024 [Felipe] - Tous droits réservés',
+                PrivacyPolicy: 'Politique de Confidentialité',
+                TermsOfUse: 'Conditions d\'Utilisation',
             }
         },
     es:
@@ -136,7 +139,8 @@ const resources =
                 project4:'',
                 cardtitle5:'',
                 project5:'',
-                copyright: '© 2024 [Felipe] - Todos los derechos reservados',
+                PrivacyPolicy: 'Política de Privacidad',
+                TermsOfUse: 'Términos de Uso',
             }
         }
 };
