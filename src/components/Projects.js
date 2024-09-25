@@ -21,22 +21,37 @@ function Projects() {
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Techbooks</h5>
+              <h5 className="card-title1">{t('cardtitle1')}</h5>
               <p className="card-text">{t('project1')}</p>
-              <a href="https://localhost:44350/Default.aspx" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+              <a href="https://github.com/feeoliveira-oficial/Manage-Book-System.git" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 Check Project
               </a>
             </div>
           </div>
         </div>
       </div>
+      <br />
       <div className="row">
         <div className="col-md-4">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">Tim Horton`s quality Analysis</h5>
+              <h5 className="card-title2">{t('cardtitle2')}</h5>
               <p className="card-text">{t('project2')}</p>
-              <a href="http://127.0.0.1:5000/" target="_blank" className="btn btn-primary">
+              <a href="https://github.com/feeoliveira-oficial/PythonQualityAnalisys" target="_blank" className="btn btn-primary">
+                Check Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div className="row">
+        <div className="col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title3">{t('cardtitle3')}</h5>
+              <p className="card-text">{t('project3')}</p>
+              <a href="https://github.com/feeoliveira-oficial/Insurance.git" target="_blank" className="btn btn-primary">
                 Check Project
               </a>
             </div>
@@ -48,3 +63,5 @@ function Projects() {
 }
 
 export default Projects;
+
+
