@@ -6,7 +6,7 @@ function Projects() {
   const { t } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
 //function to fetch the projects from the GitHub API
   useEffect(() => {
     fetch('https://api.github.com/users/feeoliveira-oficial/repos')
@@ -34,7 +34,7 @@ function Projects() {
       <br />
 
       {loading ? (
-        <div className="text-center">Carregando projetos...</div>
+        <div className="text-center"></div>
       ) : (
         <div className="row">
           {projects.map((project) => (
