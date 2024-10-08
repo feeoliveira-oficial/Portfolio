@@ -29,10 +29,8 @@ function App() {
       preserveAspectRatio: 'xMidYMid slice'
     }
   };
-
-
   return (
-    <div className="main">
+    <div className="start">
       {!started ? (
           <motion.div
             className="start-screen"

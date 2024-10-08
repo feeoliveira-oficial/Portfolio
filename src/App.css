@@ -1,11 +1,11 @@
+/* this is the css file for the app component */
 *
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
+/* define the font family */
 body, html
 {
   margin: 0;
@@ -14,12 +14,12 @@ body, html
   overflow-x: hidden;
   overflow-y: auto;
 }
-
+/* define the navbar toggler*/
 .navbar-toggler
 {
   z-index: 1001; 
 }
-
+/* define the body */
 body
 {
   font-family: 'Arial', sans-serif;
@@ -28,54 +28,50 @@ body
   min-height: 100vh;
   overflow-y: auto;
 }
-
-.main {
+/* define the color of the links */
+.navbar, .footer {
+  background: linear-gradient(135deg, #4b0082, #2c2c2c);
+}
+/*define the navbar color text */
+.navbar-nav .nav-link
+{
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #dda0dd;
+}
+style for the active link */
+.nav-link.active {
+  color: #dda0dd;
+}
+/*style for visited links */
+.nav-link:visited {
+  color: #ffffff;
+}
+.navbar-toggler {
+  background-color: #dda0dd; 
+  border-color: #ffffff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.navbar-toggler:hover {
+  background-color: #ffffff;
+  border-color: #dda0dd;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* start screen */
+.start {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-
+/* start screen and app routes will take the remaining space */
 .start-screen, .app-routes {
-  flex: 1; /* makes the content fill the remaining space */
-}
-
-.animation-wrapper
-{
-  width: 250px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.social-links {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.social-icon {
-  color: #333; 
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.1); 
-  color: #007bff;
-}
-
-
-canvas 
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
+  flex: 1;
+} 
+/* here the start screen is defined */
 .start-screen
 { position: relative;
   z-index: 1;
@@ -85,7 +81,42 @@ canvas
   flex-direction: column;
   flex-grow: 1;
 }
-
+/* to wrap the start button */
+.animation-wrapper
+{
+  width: 250px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* the social links */
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+/* social links icons */
+.social-icon {
+  color: #333; 
+  transition: transform 0.3s ease;
+}
+/* changes the color of the social links icons */
+.social-icon:hover {
+  transform: scale(1.1); 
+  color: #007bff;
+}
+/* the canvas is defined (canvas is used for the background animation) */
+canvas 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+/*to define the text of the start screen */
 .start-button-text
 {
   margin-top: 20px;
@@ -98,14 +129,13 @@ canvas
   box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
   cursor: pointer;
 }
-
+/* to change the color of the start button text */
 .start-button:hover
 {
   box-shadow: 0 0 20px rgba(97, 218, 251, 1);
   transform: scale(1.05);
 }
-
-
+/*the position of the language select */
 .language-select
 {
   position: absolute;
@@ -114,30 +144,59 @@ canvas
   display: flex;
   align-items: center;
 }
-
-
+/* the flag icon */
 .flag-icon
 {
   width: 24px;
   margin-left: 10px;
   transition: transform 0.2s ease-in-out;
 }
-
+/* changes the color of the flag icon */
 .flag-icon:hover
 {
   transform: scale(1.1);
 }
-
+/* the main page where the welcome text and the description is defined */
+.main
+{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.skills
+{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* here we define the content of the main page, to ocupate the remaining space */
+.content
+{
+  flex-grow: 1;
+}
+/* the welcome text */
 .welcome
 {
   margin: 0 auto;
   max-width: 1300px;
   text-align: center;
-  font-size: 80px;
+  font-size: 100px;
   color: #333;
   padding: 20px 0;
+  z-index: 1;
 }
-
+/* the description text telling about myself */
+.description
+{
+  font-size: 1.5rem !important;
+  margin: 0 auto;
+  max-width: 1000px;
+  line-height: 1.6;
+  text-align: center;
+  word-break: break-word;
+  padding: 0 20px;
+}
+/* here we config the aperance of the description in big screens */
 @media (min-width: 1200px) {
   .floating-column.right {
     right: 20px; 
@@ -147,14 +206,14 @@ canvas
     left: 20px; 
   }
 }
-
+/* here we config the aperance of the description in small screens */
 @media (max-width: 768px)
 {
   .floating-animations {
     display: none;
   }
 }
-
+/* here we config the aperance of the description in small screens */
 @media (max-width: 768px)
 {
   .welcome {
@@ -169,7 +228,7 @@ canvas
     height: 200px;
   }
 }
-
+/* here we config the aperance of the description in small screens the language selectors */
 @media (max-width: 768px)
 {
   .language-select
@@ -194,7 +253,7 @@ canvas
   }
 
 }
-
+/* here we config the aperance of the description in small screens the language selectors */
 @media (max-width: 576px)
 {
   .language-select
@@ -208,7 +267,7 @@ canvas
   }
   
 }
-
+/* here are the position of the skills text */
 .skills-text
 {
   position: relative;
@@ -217,18 +276,18 @@ canvas
   margin: auto;
   text-align: center;
 }
-
+/* here is the animation of the floating column */
 .container .skill-box, .container .card
 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/* here is also the animation of the floating column */
 .container .skill-box:hover, .container .card:hover
 {
   transform: translateY(-5px); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+/* the animation of the floating column */
 .skill-box {
   margin-bottom: 30px;
   padding: 20px;
@@ -236,24 +295,12 @@ canvas
   background-color: #f8f9fa;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/* here we change the color of the skill box */
 .skill-box:hover {
   transform: translateY(-5px); 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
-.description
-{
-  font-size: 1.5rem !important;
-  margin: 0 auto;
-  max-width: 1000px;
-  line-height: 1.6;
-  text-align: center;
-  word-break: break-word;
-  padding: 0 20px;
-}
-
+/* floating animations in skills page */
 .floating-animations
 {
   margin: auto;
@@ -266,7 +313,7 @@ canvas
   pointer-events: none; 
   z-index: -1;
 }
-
+/* the floating column */
 .floating-column
 {
   position: fixed;
@@ -275,23 +322,23 @@ canvas
   justify-content: space-between;
   height: 100%;
 }
-
+/* the floating column on the left */
 .floating-column.left
 {
   left: 40px;
 }
-
+/* the floating column on the right*/
 .floating-column.right
 {
   right: 100px;
 }
-
+/* the floating lottie in main page*/
 .floating-lottie
 {
   position: absolute;
   animation: float 10s ease-in-out infinite;
 }
-
+/* keyframes for the floating animation */
 @keyframes float
 {
   0% {
@@ -304,27 +351,26 @@ canvas
     transform: translateY(0);
   }
 }
-
-
+/* Footer */
 footer {
-  background-color: #f8f9fa;
-  padding: 20px 0;
+  background-color:rgba(44, 44, 44, 0.9);
+  padding: 10px 0;
   text-align: center;
   font-size: 14px;
-  color: #333;
+  color: #ffffff;
   width: 100%;
   position: relative;
   margin-top: auto;
 }
-
+/* Footer links */
 footer a
 {
-  color: #61dafb;
+  color: #ffffff;
   margin: 0 5px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
+/* Footer links hover */
 footer a:hover
 {
   color: #21a1f1;

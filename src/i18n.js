@@ -7,7 +7,7 @@ const resources =
         {
             translation:
             {
-                Start: 'Press Start',
+                Start: 'Check my journey',
                 welcome: 'Hey you, be very Welcome',
                 Home: 'Home',
                 description: "Hello! I'm Felipe, a newbie developer with a Senior passion for technology. This portfolio is a window into my work, projects, and learning journey in programming.I hope you enjoy the xp and by the chance, if you have an open position in your team, don't hesitate give me a call, text me, send smokes signs, morse code, etc.",
@@ -43,7 +43,7 @@ const resources =
         {
             translation:
             {
-                Start: 'Pressione Iniciar',
+                Start: 'Explore a jornada',
                 welcome: 'Olá, seja muito bem-vindo',
                 Home: 'Início',
                 description: "Olá! Eu sou o Felipe, um desenvolvedor juninho com uma paixão sênior por tecnologia. Este portfólio é uma janela para o meu trabalho, projetos e jornada de aprendizado em programação. Aproveite a experiência e, por acaso, houver uma posição na sua equipe, não hesite em me ligar, enviar uma mensagem de texto, enviar sinais de fumaça, código morse, etc.",

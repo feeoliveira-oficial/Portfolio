@@ -17,41 +17,43 @@ function Main() {
   };
 
   return (
-    <motion.section
-      id="about"
-      className="d-flex flex-column align-items-center justify-content-center"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1.8 }}
-    >
-      <div className="lottie-animation">
-        <Lottie options={defaultOptions} height={100} width={130} />
-      </div>
-      <h1 className="welcome">{t('welcome')}</h1>
-      <br />
-      <motion.p
-        className="description lead text-center"
+    <div className="main">
+      <motion.section
+        className="content d-flex flex-column align-items-center justify-content-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-      >
-        {t('description')}
-      </motion.p>
-      <br />
-      
-      <div className="social-links">
-        <a href="https://github.com/feeoliveira-oficial" target="_blank" rel="noopener noreferrer" className="social-icon">
-          <FaGithub size={40} />
-        </a>
-        <a href="https://www.linkedin.com/in/feeoliveira-oficial/" target="_blank" rel="noopener noreferrer" className="social-icon">
-          <FaLinkedin size={40} />
-        </a>
-        <a href="https://www.instagram.com/feeoliveira.oficial/" target="_blank" rel="noopener noreferrer" className="social-icon">
-          <FaInstagram size={40} />
-        </a>
-      </div>
-    </motion.section>
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        >
+        <div className="lottie-animation">
+          <Lottie options={defaultOptions} height={100} width={130} />
+        </div>
+        <h1 className="welcome">{t('welcome')}</h1>
+        <br />
+        <motion.p
+          className="description lead text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          {t('description')}
+        </motion.p>
+        <br />
+        <br/>
+        
+        <div className="social-links">
+          <a href="https://github.com/feeoliveira-oficial" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaGithub size={40} />
+          </a>
+          <a href="https://www.linkedin.com/in/feeoliveira-oficial/" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaLinkedin size={40} />
+          </a>
+          <a href="https://www.instagram.com/feeoliveira.oficial/" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <FaInstagram size={40} />
+          </a>
+        </div>
+      </motion.section>
+  </div>
   );
 }
 
