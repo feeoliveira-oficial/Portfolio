@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+
 function Blog() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
