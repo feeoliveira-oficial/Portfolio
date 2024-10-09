@@ -41,7 +41,7 @@ body
 .nav-link:hover {
   color: #dda0dd;
 }
-style for the active link */
+/*style for the active link */
 .nav-link.active {
   color: #dda0dd;
 }
@@ -374,5 +374,203 @@ footer a
 footer a:hover
 {
   color: #21a1f1;
+}
+
+/* Blog page */
+.news-widget {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-widget .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-widget .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.article h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.article p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.article a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.article a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .news-widget h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Techbuddy page */
+
+/* General TechBuddy styles */
+.techbuddy {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 100%vw;
+  margin: 20px auto;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TechBuddy's Header */
+.techbuddy h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-shadow: 2px 2px #ecf0f1;
+  margin-bottom: 20px;
+}
+
+/* Question box */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #3498db;
+  font-size: 1.2rem;
+  box-shadow: 0px 5px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #2980b9;
+  box-shadow: 0px 5px 20px rgba(41, 128, 185, 0.4);
+  outline: none;
+}
+
+/* Button style */
+button {
+  background-color: #1b445e;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 5px 10px rgba(52, 152, 219, 0.3);
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+/* Answer style */
+.answer {
+  margin-top: 20px;
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 5px solid #2ecc71;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.answer h3 {
+  color: #27ae60;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Loading*/
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Taping animation */
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+/* Geek style for the bot */
+.bot-icon {
+  font-size: 2rem;
+  color: #3498db;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.geek-face {
+  font-size: 4rem;
+  color: #2ecc71;
+  margin-bottom: 15px;
+  animation: bounce 2s infinite;
+}
+
+.bot-chat-bubble {
+  position: relative;
+  background-color: #3498db;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: left;
+  font-size: 1.2rem;
+  animation: fadeIn 1s ease;
+}
+
+.bot-chat-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #3498db;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
 }
 
