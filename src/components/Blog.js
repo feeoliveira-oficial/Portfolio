@@ -1,15 +1,25 @@
-import React, { useState, useEffect } from 'react';
-
-function Blog()
-{
+function Blog() {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchArticles = async () => {
+      const requestOptions = {
+        method: 'GET',
+      };
+      const params = {
+        api_token: process.env.NEWS_API_KEY,
+        categories: 'business, tech',
+        search: 'apple',
+        limit: '10',
+      };
+      const esc = encodeURIComponent;
+      const query = Object.keys(params)
+        .map(k => `${esc(k)}=${esc(params[k])}`)
+        .join('&');
       try {
-        const response = await fetch('https://mybackendapp.herokuapp.com/api/news');
+        const response = await fetch(`https://api.thenewsapi.com/v1/news/all?${query}`, requestOptions);
         const result = await response.json();
         if (result.data) {
           setArticles(result.data);
@@ -53,6 +63,5 @@ function Blog()
     </div>
   );
 }
-
 
 export default Blog;
