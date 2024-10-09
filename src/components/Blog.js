@@ -16,7 +16,7 @@ function Blog()
             };
             const params =
             {
-                api_token: 'TuLhaByabFTS2vXrdcBPRSmilILHIc0LfUa15L0p',
+                api_token: process.env.REACT_APP_NEWS_API_KEY,
                 categories: 'business, tech',
                 search: 'apple',
                 limit: '10',
@@ -79,26 +79,3 @@ function Blog()
 
 
 export default Blog;
-
-
-/* email: feeolvieirasantoss@gmail.com password: ck7B!@YvzUGg92U */
-
-// return (
-  //   <div className="news-widget">
-  //     <h3>Latest Tech News</h3>
-  //     {loading && <p>Loading news...</p>}
-  //     {error && <p>{error}</p>}
-  //     {!loading && articles && articles.length > 0 ? (
-  //       articles.map((article, index) => (
-  //         <div key={index} className="article">
-  //           <h4>{article.title}</h4>
-  //           <p>{article.description}</p>
-  //           <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
-  //         </div>
-  //       ))
-  //     ) : (
-  //       !loading && !error && <p>No articles found.</p>
-  //     )}
-  //   </div>
-  // );
-    
