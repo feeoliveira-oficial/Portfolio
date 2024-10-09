@@ -6,48 +6,25 @@ function Blog()
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-    useEffect(() =>
-    {
-        const fetchArticles = async () =>
-        {
-            const requestOptions = 
-            {
-                method: 'GET',
-            };
-            const params =
-            {
-                api_token: 'TuLhaByabFTS2vXrdcBPRSmilILHIc0LfUa15L0p',
-                categories: 'business, tech',
-                search: 'apple',
-                limit: '10',
-            };
-            const esc = encodeURIComponent;
-            const query = Object.keys(params)
-            .map(k => `${esc(k)}=${esc(params[k])}`)
-            .join('&');
-            try
-            {
-                const response = await fetch(`https://api.thenewsapi.com/v1/news/all?${query}`, requestOptions);
-                const result = await response.json();
-                if (result.data)
-                    {
-                        setArticles(result.data);
-                    }
-                else 
-                    {
-                        setError('No articles found');
-                    }
-                    setLoading(false);
-            }
-            catch (error)
-                {
-                    console.error('Error fetching articles:', error);
-                    setError('Error fetching articles');
-                    setLoading(false);
-                }
-        };
-        fetchArticles();
-    }, []);
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch('https://my-backend-app.herokuapp.com/api/news');
+        const result = await response.json();
+        if (result.data) {
+          setArticles(result.data);
+        } else {
+          setError('No articles found');
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+        setError('Error fetching articles');
+        setLoading(false);
+      }
+    };
+    fetchArticles();
+  }, []);
 
   return (
     <div className="container news-widget mt-5">
@@ -79,26 +56,3 @@ function Blog()
 
 
 export default Blog;
-
-
-/* email: feeolvieirasantoss@gmail.com password: ck7B!@YvzUGg92U */
-
-// return (
-  //   <div className="news-widget">
-  //     <h3>Latest Tech News</h3>
-  //     {loading && <p>Loading news...</p>}
-  //     {error && <p>{error}</p>}
-  //     {!loading && articles && articles.length > 0 ? (
-  //       articles.map((article, index) => (
-  //         <div key={index} className="article">
-  //           <h4>{article.title}</h4>
-  //           <p>{article.description}</p>
-  //           <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
-  //         </div>
-  //       ))
-  //     ) : (
-  //       !loading && !error && <p>No articles found.</p>
-  //     )}
-  //   </div>
-  // );
-    

@@ -8,50 +8,42 @@ function TechBuddy()
     const [question, setQuestion] = useState('');
     const [answer, setAnswer] = useState('');
     const [loading, setLoading] = useState(false);
-    
+
 
     const handleQuestionChange = (e) => 
     {
         setQuestion(e.target.value);
     };
 
-  const techbuddy = async () => {
-    if (!question) return;
-    
-    setLoading(true);
-    
-    try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({
-          model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: `Explain briefly what is ${question} in Programming.` }],
-          max_tokens: 150,
-        }),
-      });
+    const techbuddy = async () => {
+      if (!question) return;
       
-      if (response.status === 429) {
-        alert('API rate limit exceeded. Please try again later.');
-        return;
+      setLoading(true);
+      
+      try {
+        const response = await fetch('https://my-backend-app.herokuapp.com/api/openai', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: question }),
+        });
+        
+        if (response.status === 429) {
+          alert('API rate limit exceeded. Please try again later.');
+          return;
+        }
+    
+        const result = await response.json();
+        if (result.choices && result.choices.length > 0) {
+          setAnswer(result.choices[0].message.content.trim());
+        } else {
+          console.error('No valid choices found:', result);
+        }
+      } catch (error) {
+        console.error('Error fetching response:', error);
+      } finally {
+        setLoading(false);
       }
-
-      const result = await response.json();
-
-      if (result.choices && result.choices.length > 0) {
-        setAnswer(result.choices[0].message.content.trim());
-      } else {
-        console.error('No valid choices found:', result);
-      }
-    } catch (error) {
-      console.error('Error fetching response:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
 
   return (
     <div className="techbuddy">
