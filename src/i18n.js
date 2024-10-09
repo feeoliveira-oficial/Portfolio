@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import Contact from './components/Contact';
 
 const resources =
 {
@@ -28,6 +29,12 @@ const resources =
                 Bot: 'TechBuddy - Our personal tech Jinn',
                 AskPlaceholder: "Ask me anything about technology... e.g., What is React?",
                 BotButton: 'Come on ask, but be wise u have just some tokens available!',
+                Contact: 'Contact',
+                Name: 'Name',
+                Message: 'Message',
+                Send: 'Send',
+                MessageSentSuccess: "Message sent successfully!",
+                MessageSentFailure: "Error sending message. Try again.",
                 PrivacyPolicy: 'Privacy Policy',
                 TermsOfUse: 'Terms of Use',
             }
@@ -57,6 +64,12 @@ const resources =
                 Bot: 'Robotinik - Nosso pingado Tech de cada dia',
                 AskPlaceholder: "Pergunte-me qualquer coisa sobre tecnologia... ex.: O que é React?",
                 BotButton: 'Vamos lá pergunte, mas seja sábio você tem só tem os tokens grátis disponíveis!',
+                Contact: 'Contato',
+                Name: 'Nome',
+                Message: 'Mensagem',
+                Send: 'Enviar',
+                MessageSentSuccess: "Mensagem enviada com sucesso!",
+                MessageSentFailure: "Erro ao enviar a mensagem. Tente novamente.",
                 PrivacyPolicy: 'Política de Privacidade',
                 TermsOfUse: 'Termos de Uso',
             }
@@ -87,6 +100,12 @@ const resources =
                 Bot: 'Copain de tech - notre génie technologique personnel',
                 AskPlaceholder: "Demandez-moi n'importe quoi sur la technologie... par exemple, Qu'est-ce que React?",
                 BotButton: 'Allez-y, demandez, mais soyez sage, vous n\'avez que quelques jetons',
+                Contact: 'Contact',
+                Name: 'Nom',
+                Message: 'Message',
+                Send: 'Envoyer',
+                MessageSentSuccess: "Message envoyé avec succès!",
+                MessageSentFailure: "Erreur lors de l'envoi du message. Réessayer.",
                 PrivacyPolicy: 'Politique de Confidentialité',
                 TermsOfUse: 'Conditions d\'Utilisation',
             }
@@ -116,6 +135,12 @@ const resources =
                 Bot: 'TechBuddy - Nuestro genio tecnológico personal',
                 AskPlaceholder: "Pregúntame cualquier cosa sobre tecnología... por ejemplo, ¿Qué es React?",
                 BotButton: 'Vamos, pregunta, pero sé sabio, solo tienes algunos tokens disponibles!',
+                Contact: 'Contacto',
+                Name: 'Nombre',
+                Message: 'Mensaje',
+                Send: 'Enviar',
+                MessageSentSuccess: "¡Mensaje enviado con éxito!",
+                MessageSentFailure: "Error al enviar el mensaje. Inténtalo de nuevo.",
                 PrivacyPolicy: 'Política de Privacidad',
                 TermsOfUse: 'Términos de Uso',
             }

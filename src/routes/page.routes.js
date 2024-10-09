@@ -6,6 +6,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Blog from '../components/Blog';
 import TechBuddy from '../components/TechBuddy';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { AnimatePresence } from 'framer-motion';
 
@@ -22,6 +23,7 @@ const Approutes = () =>
           <Route path="/projects" element={<Projects />} />
           <Route path="/Blog" element={<Blog/>} />
           <Route path="/TechBuddy" element={<TechBuddy />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </AnimatePresence>
       <Footer />
