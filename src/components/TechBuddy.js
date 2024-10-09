@@ -21,7 +21,7 @@ function TechBuddy()
       setLoading(true);
       
       try {
-        const response = await fetch('https://my-backend-app.herokuapp.com/api/openai', {
+        const response = await fetch('https://mybackendapp.herokuapp.com/api/openai', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ question: question }),

@@ -9,7 +9,7 @@ function Blog()
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('https://my-backend-app.herokuapp.com/api/news');
+        const response = await fetch('https://mybackendapp.herokuapp.com/api/news');
         const result = await response.json();
         if (result.data) {
           setArticles(result.data);
