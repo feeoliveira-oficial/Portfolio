@@ -29,6 +29,12 @@ function Header() {
             <li className="nav-item">
               <Link className="nav-link" to="/projects">{t('Projects')}</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/blog">{t('Blog')}</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/techbuddy">{t('TechBuddy')}</Link>
+            </li>
           </ul>
           <div className="language-select ms-auto">
             <img

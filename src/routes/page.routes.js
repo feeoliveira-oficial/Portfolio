@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
+import Blog from '../components/Blog';
+import TechBuddy from '../components/TechBuddy';
 import Footer from '../components/Footer';
 import { AnimatePresence } from 'framer-motion';
 
@@ -18,6 +20,8 @@ const Approutes = () =>
           <Route path="/" element={<Main />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/Blog" element={<Blog/>} />
+          <Route path="/TechBuddy" element={<TechBuddy />} />
         </Routes>
       </AnimatePresence>
       <Footer />
