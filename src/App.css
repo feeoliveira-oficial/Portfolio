@@ -5,6 +5,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ========================= */
+/* GLOBAL LAYOUT STRUCTURE */
+/* ========================= */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* define the font family */
 body, html
 {
@@ -185,7 +203,7 @@ canvas
   padding: 20px 0;
   z-index: 1;
 }
-/* the description text telling about myself */
+/* the description text telling about THE BUSINESS */
 .description
 {
   font-size: 1.5rem !important;
@@ -195,23 +213,6 @@ canvas
   text-align: center;
   word-break: break-word;
   padding: 0 20px;
-}
-/* here we config the aperance of the description in big screens */
-@media (min-width: 1200px) {
-  .floating-column.right {
-    right: 20px; 
-  }
-
-  .floating-column.left {
-    left: 20px; 
-  }
-}
-/* here we config the aperance of the description in small screens */
-@media (max-width: 768px)
-{
-  .floating-animations {
-    display: none;
-  }
 }
 /* here we config the aperance of the description in small screens */
 @media (max-width: 768px)
@@ -267,90 +268,28 @@ canvas
   }
   
 }
-/* here are the position of the skills text */
-.skills-text
-{
-  position: relative;
-  width: 80vw;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
+
+/* ========================= */
+/* SERVICES HERO DESCRIPTION */
+/* ========================= */
+
+.services-hero {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: #444;
+  font-weight: 400;
 }
-/* here is the animation of the floating column */
-.container .skill-box, .container .card
-{
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-/* here is also the animation of the floating column */
-.container .skill-box:hover, .container .card:hover
-{
-  transform: translateY(-5px); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/* the animation of the floating column */
-.skill-box {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f8f9fa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-/* here we change the color of the skill box */
-.skill-box:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-/* floating animations in skills page */
-.floating-animations
-{
-  margin: auto;
-  left: 0;
-  right: 0;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: auto;
-  pointer-events: none; 
-  z-index: -1;
-}
-/* the floating column */
-.floating-column
-{
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-/* the floating column on the left */
-.floating-column.left
-{
-  left: 40px;
-}
-/* the floating column on the right*/
-.floating-column.right
-{
-  right: 100px;
-}
-/* the floating lottie in main page*/
-.floating-lottie
-{
-  position: absolute;
-  animation: float 10s ease-in-out infinite;
-}
-/* keyframes for the floating animation */
-@keyframes float
-{
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
+
+@media (max-width: 768px) {
+  .services-hero {
+    font-size: 1.1rem;
+    padding: 0 15px;
   }
 }
+
+
 /* Footer */
 footer {
   background-color:rgba(44, 44, 44, 0.9);
@@ -635,4 +574,173 @@ button[type="submit"]:hover {
   margin-top: 1rem;
   font-weight: bold;
   color: #4CAF50;
+}
+
+/* ========================= */
+/* SERVICES PAGE - PREMIUM UI */
+/* ========================= */
+
+.services {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Interactive cards */
+.interactive-card {
+  padding: 35px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.interactive-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, #4b0082, #1a1a1a);
+}
+
+.interactive-card:hover h3 {
+  color: #dda0dd;
+}
+
+/* Animated list */
+.animated-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.animated-list li {
+  margin-bottom: 12px;
+  padding-left: 15px;
+  position: relative;
+  opacity: 0.95;
+}
+
+.animated-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #dda0dd;
+}
+
+/* Process items */
+.process-item {
+  margin-top: 15px;
+  padding: 12px 15px;
+  border-left: 3px solid #dda0dd;
+  transition: all 0.3s ease;
+}
+
+.process-item strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.process-item p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* CTA section */
+.services .btn-primary {
+  background: linear-gradient(135deg, #4b0082, #dda0dd);
+  border: none;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.services .btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(221, 160, 221, 0.6);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .interactive-card {
+    padding: 25px;
+  }
+
+  .interactive-card h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ========================= */
+/* SERVICES INTERACTION FIXES */
+/* ========================= */
+
+/* Active card state */
+.interactive-card.active {
+  background: linear-gradient(135deg, #4b0082, #1a1a1a);
+  box-shadow: 0 20px 45px rgba(75, 0, 130, 0.5);
+}
+
+/* Smooth layout animation helper */
+.interactive-card,
+.process-item {
+  will-change: transform, height;
+}
+
+/* Expand arrow indicator */
+.interactive-card h3 {
+  position: relative;
+  padding-right: 25px;
+}
+
+.interactive-card h3::after {
+  content: "▾";
+  position: absolute;
+  right: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+/* Rotate arrow when active */
+.interactive-card.active h3::after {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Process item hover feedback */
+.process-item:hover {
+  background: rgba(221, 160, 221, 0.05);
+  border-left: 3px solid #dda0dd;
+}
+
+/* Active process item */
+.process-item.active {
+  background: rgba(221, 160, 221, 0.08);
+}
+
+/* Better spacing between cards */
+.services .interactive-card + .interactive-card {
+  margin-top: 20px;
+}
+
+/* Improve mobile tap feedback */
+@media (max-width: 768px) {
+  .interactive-card {
+    cursor: default;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .interactive-card:active {
+    transform: scale(0.99);
+  }
 }

@@ -30,12 +30,6 @@ function Header() {
               <Link className="nav-link" to="/projects">{t('Projects')}</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/blog">{t('Blog')}</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/techbuddy">{t('TechBuddy')}</Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="/contact">{t('Contact')}</Link>
             </li>
           </ul>

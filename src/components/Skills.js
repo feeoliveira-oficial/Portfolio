@@ -1,144 +1,209 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import Lottie from 'react-lottie';
-import htmlAnimation from '../json/html.json';
-import cssAnimation from '../json/css.json';
-import jsAnimation from '../json/js.json';
-import reactAnimation from '../json/React.json';
-import mysqlAnimation from '../json/MySQL.json';
-import cAnimation from '../json/C#.json';
+import { useNavigate } from 'react-router-dom';
 
-function Skills() {
+function Services() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
-  const defaultOptions = (animationData) => ({
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  });
+  const isMobile = window.innerWidth <= 768;
+
+  const [activeSection, setActiveSection] = useState(null);
+  const [activeProcess, setActiveProcess] = useState(null);
+
+  const closeTimeout = useRef(null);
+
+  /* ========================= */
+  /* FIXED HYBRID INTERACTION */
+  /* ========================= */
+
+  const handleEnter = (section) => {
+    if (!isMobile) {
+      if (closeTimeout.current) {
+        clearTimeout(closeTimeout.current);
+      }
+      setActiveSection(section);
+    }
+  };
+
+  const handleLeave = () => {
+    if (!isMobile) {
+      closeTimeout.current = setTimeout(() => {
+        setActiveSection(null);
+        setActiveProcess(null);
+      }, 180);
+    }
+  };
+
+  const handleClick = (section) => {
+    if (isMobile) {
+      setActiveSection(prev =>
+        prev === section ? null : section
+      );
+      setActiveProcess(null);
+    }
+  };
+
+  /* ========================= */
+  /* PREMIUM LIST ANIMATION */
+  /* ========================= */
+
+  const renderList = (items) => (
+    <motion.ul
+      layout
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{
+        duration: 0.6,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      style={{ overflow: "hidden" }}
+      className="animated-list"
+    >
+      {items.map((item, index) => (
+        <motion.li
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.4,
+            delay: index * 0.07,
+          }}
+        >
+          {item}
+        </motion.li>
+      ))}
+    </motion.ul>
+  );
 
   return (
-    <div className="skills">
-      <motion.section
-        className="container mt-5 section"
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 100 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-      >
+    <div className="services">
+      <div className="container mt-5 section">
+
+        {/* HERO */}
         <h2 className="text-center">{t('SkillsTitle')}</h2>
-        <br />
+        <p className="services-hero text-center mb-5">
+          {t('heroDescription')}
+        </p>
 
-        <div className="floating-animations">
-          <div className="floating-column left">
-            <div className="floating-lottie" style={{ top: '-10%' }}>
-            <Lottie options={defaultOptions(htmlAnimation)} height={90} width={90} />
-            </div>
-            <div className="floating-lottie" style={{ top: '20%' }}>
-            <Lottie options={defaultOptions(jsAnimation)} height={60} width={60} />
-            </div>
-            <div className="floating-lottie" style={{ top: '48%' }}>
-            <Lottie options={defaultOptions(mysqlAnimation)} height={100} width={100} />
-            </div>
-          </div>
+        {/* WHY */}
+        <motion.div
+          layout
+          className={`interactive-card ${activeSection === 'why' ? 'active' : ''}`}
+          onMouseEnter={() => handleEnter('why')}
+          onMouseLeave={handleLeave}
+          onClick={() => handleClick('why')}
+        >
+          <h3>{t('whyTitle')}</h3>
 
-          <div className="floating-column right">
-            <div className="floating-lottie" style={{ top: '-10%' }}>
-            <Lottie options={defaultOptions(cssAnimation)} height={90} width={90} />
-            </div>
-            <div className="floating-lottie" style={{ top: '20%' }}>
-            <Lottie options={defaultOptions(reactAnimation)} height={100} width={100} />
-            </div>
-            <div className="floating-lottie" style={{ top: '47%' }}>
-            <Lottie options={defaultOptions(cAnimation)} height={90} width={90} />
-            </div>
-          </div>
+          <AnimatePresence>
+            {activeSection === 'why' &&
+              renderList([
+                t('why1'),
+                t('why2'),
+                t('why3'),
+                t('why4'),
+              ])
+            }
+          </AnimatePresence>
+        </motion.div>
+
+        {/* RESULTS */}
+        <motion.div
+          layout
+          className={`interactive-card ${activeSection === 'results' ? 'active' : ''}`}
+          onMouseEnter={() => handleEnter('results')}
+          onMouseLeave={handleLeave}
+          onClick={() => handleClick('results')}
+        >
+          <h3>{t('resultsTitle')}</h3>
+
+          <AnimatePresence>
+            {activeSection === 'results' &&
+              renderList([
+                t('result1'),
+                t('result2'),
+                t('result3'),
+                t('result4'),
+              ])
+            }
+          </AnimatePresence>
+        </motion.div>
+
+        {/* PROCESS */}
+        <motion.div
+          layout
+          className={`interactive-card ${activeSection === 'process' ? 'active' : ''}`}
+          onMouseEnter={() => handleEnter('process')}
+          onMouseLeave={handleLeave}
+          onClick={() => handleClick('process')}
+        >
+          <h3>{t('processTitle')}</h3>
+
+          <AnimatePresence>
+            {activeSection === 'process' && (
+              <motion.div layout>
+                {[
+                  { title: t('process1Title'), desc: t('process1Desc') },
+                  { title: t('process2Title'), desc: t('process2Desc') },
+                  { title: t('process3Title'), desc: t('process3Desc') },
+                  { title: t('process4Title'), desc: t('process4Desc') },
+                ].map((step, index) => (
+                  <motion.div
+                    layout
+                    key={index}
+                    className={`process-item ${activeProcess === index ? 'active' : ''}`}
+                    onMouseEnter={() => !isMobile && setActiveProcess(index)}
+                    onClick={() =>
+                      isMobile &&
+                      setActiveProcess(prev =>
+                        prev === index ? null : index
+                      )
+                    }
+                  >
+                    <strong>{step.title}</strong>
+
+                    <AnimatePresence>
+                      {activeProcess === index && (
+                        <motion.p
+                          layout
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{
+                            duration: 0.5,
+                            ease: [0.22, 1, 0.36, 1],
+                          }}
+                          style={{ overflow: "hidden" }}
+                        >
+                          {step.desc}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* CTA */}
+        <div className="text-center mt-5">
+          <h3>{t('ctaTitle')}</h3>
+          <p>{t('ctaDesc')}</p>
+          <button
+            className="btn btn-primary mt-3"
+            onClick={() => navigate('/contact')}
+          >
+            {t('ctaButton')}
+          </button>
         </div>
 
-        <div className='skills-text'>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fab fa-html5 fa-3x"></i>
-                <h3>HTML</h3>
-                <p>{t('html')}</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fab fa-css3-alt fa-3x"></i>
-                <h3>CSS & Bootstrap</h3>
-                <p>{t('css')}</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fab fa-js-square fa-3x"></i>
-                <h3>JavaScript</h3>
-                <p>{t('javascript')}</p>
-              </div>
-            </div>
-          </div>
-
-          <br />
-
-          <div className="row">
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fab fa-react fa-3x"></i>
-                <h3>React</h3>
-                <p>{t('React')}</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fab fa-java fa-3x"></i>
-                <h3>Java</h3>
-                <p>{t('Java')}</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fab fa-php fa-3x"></i>
-                <h3>PHP</h3>
-                <p>{t('PHP')}</p>
-              </div>
-            </div>
-          </div>
-
-          <br />
-
-          <div className="row">
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fas fa-database fa-3x"></i>
-                <h3>MySQL</h3>
-                <p>{t('SQL')}</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fas fa-chart-bar fa-3x"></i>
-                <h3>Power BI</h3>
-                <p>{t('BI')}</p>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="skill-box text-center">
-                <i className="fas fa-mobile-alt fa-3x"></i>
-                <h3>C#</h3>
-                <p>{t('Cs')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+      </div>
     </div>
   );
 }
 
-export default Skills;
+export default Services;
